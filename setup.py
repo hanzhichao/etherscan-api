@@ -29,7 +29,7 @@ setup(
     keywords=[
         'etherscan', 'eth', 'etherscan api', 'etherscan v2',
     ],
-    name='etherscan-api',
+    name='etherscan-api-v2',
     packages=find_packages(include=['etherscan_api']),
     setup_requires=setup_requirements,
     url='https://github.com/hanzhichao/etherscan-api',

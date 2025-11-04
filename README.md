@@ -4,7 +4,7 @@ Etherscan v2 api client
 
 ## Install
 ```bash
-pip intall etherscan-api
+pip install etherscan-api-v2
 ```
 
 
