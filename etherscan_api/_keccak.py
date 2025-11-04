@@ -1,8 +1,7 @@
-from math import log
-from operator import xor
 from copy import deepcopy
 from functools import reduce
-from binascii import hexlify
+from math import log
+from operator import xor
 
 # The Keccak-f round constants.
 RoundConstants = [
@@ -248,7 +247,7 @@ class KeccakState:
 
         for y in self.rangeH:
             for x in self.rangeW:
-                self.s[x][y] ^= KeccakState.bytes2lane(bb[i : i + 8])
+                self.s[x][y] ^= KeccakState.bytes2lane(bb[i: i + 8])
                 i += 8
 
     def squeeze(self):
@@ -266,7 +265,7 @@ class KeccakState:
         for y in self.rangeH:
             for x in self.rangeW:
                 v = KeccakState.lane2bytes(self.s[x][y], self.lanew)
-                out[i : i + 8] = v
+                out[i: i + 8] = v
                 i += 8
         return out
 
@@ -278,7 +277,7 @@ class KeccakState:
         i = 0
         for y in self.rangeH:
             for x in self.rangeW:
-                self.s[x][y] = KeccakState.bytes2lane(bb[i : i + 8])
+                self.s[x][y] = KeccakState.bytes2lane(bb[i: i + 8])
                 i += 8
 
 
@@ -302,7 +301,7 @@ class KeccakSponge:
 
         while len(self.buffer) >= self.state.bitrate_bytes:
             self.absorb_block(self.buffer[: self.state.bitrate_bytes])
-            self.buffer = self.buffer[self.state.bitrate_bytes :]
+            self.buffer = self.buffer[self.state.bitrate_bytes:]
 
     def absorb_final(self):
         padded = self.buffer + self.padfn(len(self.buffer), self.state.bitrate_bytes)
