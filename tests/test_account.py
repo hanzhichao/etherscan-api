@@ -12,7 +12,7 @@ def test_get_balances(etherscan, account):
 
 
 def test_get_token_balance(etherscan, account, usdt):
-    result = etherscan.get_token_balance(account, contract_address=usdt)
+    result = etherscan.get_token_balance(usdt, account)
     print(result)
 
 
