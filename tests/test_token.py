@@ -26,20 +26,6 @@ def test_get_token_top_holders(etherscan, usdt):
     print(len(holders))
 
 
-
-
-
-def test_demo():
-    # from eth_utils import keccak
-    # r = keccak(text='balanceOf()')
-    # print(r)
-    from sha3 import keccak_256
-    from .keccak import Keccak256
-
-    k = keccak_256(b'balanceOf()')
-
-    r = k.hexdigest()
-    print(r)
-
-    r2 = Keccak256(b'balanceOf()').hexdigest()
-    print(r2)
+def test_get_token_holders_and_balance(etherscan, usdt):
+    valid_holders = etherscan.get_token_valid_holders(usdt)
+    print(len(valid_holders))

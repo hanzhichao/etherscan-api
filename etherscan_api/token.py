@@ -30,7 +30,7 @@ class TokenExtraApiMixIn(BaseApi):
         _holders = self.get_token_holders(contract_address)
         holders = []
         for addr in _holders:
-            balance = self.get_token_balance(addr, contract_address=contract_address)
+            balance = self.get_token_balance(contract_address, addr)
             holders.append((addr, balance))
         return holders
 
